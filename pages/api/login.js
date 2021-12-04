@@ -3,6 +3,7 @@ const user = { username: "username", password: "password" };
 export default function handler(req, res) {
   if (req.method !== "POST") {
     res.status(405).json({ success: false, message: "Method not allowed" });
+    return;
   }
   const body = req.body;
   if (body && body.username && body.password) {

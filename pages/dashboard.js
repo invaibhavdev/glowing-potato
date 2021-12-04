@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Image, Row, Col, Typography, Space } from "antd";
+import styles from "../styles/Home.module.css";
+
 const { Title } = Typography;
 const Dashboard = () => {
   const [list, setList] = useState(null);
@@ -22,10 +24,12 @@ const Dashboard = () => {
     ));
   };
   return (
-    <Space direction="vertical">
-      <Title>Welcome back!</Title>
-      <Row>{list ? renderList(list) : null}</Row>
-    </Space>
+    <div className={styles.container}>
+      <Space direction="vertical">
+        <Title>Welcome back!</Title>
+        <Row>{list ? renderList(list) : null}</Row>
+      </Space>
+    </div>
   );
 };
 export default Dashboard;
